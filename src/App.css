@@ -1,42 +1,107 @@
-#root {
-  max-width: 1280px;
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: #f2f5f7;
+  color: #474747;
+  margin: 0;
+}
+
+main {
+  max-width: 960px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h1 {
+  font-weight: 500;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+p {
+  font-size: 16px;
+  line-height: 24px;
+  text-align: justify;
+}
+
+#containerForTabs {
+  padding: 40px;
+  border-radius: 5px;
+  margin: 40px 0;
+}
+#containerForTabs ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #dedede;
+}
+@media only screen and (max-width: 768px) {
+  #containerForTabs ul {
+    overflow-x: scroll;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+#containerForTabs ul li {
+  display: flex;
+  padding: 0px;
+  width: 100%;
+}
+#containerForTabs ul button {
+  background: none;
+  border: none;
+  outline: none;
+  color: #474747;
+  opacity: 0.8;
+  cursor: pointer;
+  font-size: 16px;
+  position: relative;
+  padding: 20px;
+  width: 100%;
+  transition: 0.3s all ease-in;
+}
+#containerForTabs ul button:hover, #containerForTabs ul button:focus {
+  opacity: 0.5;
+}
+#containerForTabs ul button:active {
+  transform: scale(0.9);
+  transition-duration: 500ms;
+}
+#containerForTabs ul button.active {
+  opacity: 1;
+  font-weight: 700;
+}
+#containerForTabs ul button:after {
+  content: "";
+  height: 3px;
+  width: 100%;
+  position: absolute;
+  display: block;
+  background: #ccc;
+  bottom: 0;
+  opacity: 0;
+  left: 0;
+  transition: 0.25s ease;
+}
+#containerForTabs ul button:hover::after {
+  opacity: 1;
+}
+#containerForTabs ul button.active::after {
+  opacity: 1;
+  background: #474747;
+}
+#containerForTabs .tabItemContent {
+  display: none;
+}
+#containerForTabs .tabItemContent.active {
+  display: block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+/*# sourceMappingURL=App.css.map */
