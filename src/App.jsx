@@ -1,13 +1,18 @@
-import { useState } from 'react'
-import './App.css'
+import { TABS } from './constants'
+import { useState, useEffect } from 'react'
+import Tabs from './components/Tabs/Tabs'
 
 function App() {
-    const [tabActive] = useState(0)
+    const [tabIdActive, setTabIdActive] = useState()
+
+    useEffect(() => {
+        setTabIdActive(TABS[0].id)
+    }, [])
 
     return (
-        <>
-            <p>{tabActive}</p>
-        </>
+        <main>
+            <Tabs data={TABS} tabIdActive={tabIdActive} setTabIdActive={setTabIdActive} />
+        </main>
     )
 }
 

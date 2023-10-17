@@ -3,40 +3,7 @@ $font-family: 'Roboto', sans-serif;
 $color-dark: #474747;
 $color-light: #f2f5f7;
 
-* {
-    box-sizing: border-box;
-}
-
-body,
-html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
-
-body {
-    font-family: $font-family;
-    background: $color-light;
-    color: $color-dark;
-    margin: 0;
-}
-
-main {
-    max-width: 960px;
-    margin: 0 auto;
-}
-
-h1 {
-    font-weight: 500;
-}
-
-p {
-    font-size: 16px;
-    line-height: 24px;
-    text-align: justify;
-}
-
-#containerForTabs {
+.tabs {
     padding: 40px;
     border-radius: 5px;
     margin: 40px 0;
@@ -82,7 +49,7 @@ p {
                 transition-duration: 500ms;
             }
 
-            &.active {
+            &.tab--active {
                 opacity: 1;
                 font-weight: 700;
             }
@@ -104,18 +71,27 @@ p {
                 opacity: 1;
             }
 
-            &.active::after {
+            &.tab--active::after {
                 opacity: 1;
                 background: $color-dark;
             }
         }
     }
 
-    .tabItemContent {
+    .tab__item__content {
         display: none;
+        animation: fadeEffect 0.5s;
 
-        &.active {
+        &.tab__item__content--active {
             display: block;
         }
+    }
+}
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
